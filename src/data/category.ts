@@ -1,6 +1,4 @@
-import { ICategory } from "@/types/category";
-
-export const categories: ICategory[] = [
+export const categories = [
   {
     _id: "32432432er",
     title: "Classic Dresses",

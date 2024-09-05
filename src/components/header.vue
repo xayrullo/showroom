@@ -1,5 +1,5 @@
 <template>
-     <header>
+  <header>
     <div class="w-[100%] w-max-[1280px]">
       <div
         class="w-[100%] h-[32px] flex justify-between items-center px-[72px]"
@@ -16,46 +16,46 @@
             {{ $t("HEADER.SHOP_NOW") }}
           </h3>
         </div>
-        <div class="flex gap-[6px] cursor-pointer"  @click="openLanguage(0)" >
+        <div class="flex gap-[6px] cursor-pointer" @click="openLanguage(0)">
           <div class="flex gap-[6px]" @click="openLanguage(0)">
-          <img src="/images/icons/icon.svg" alt="" />
-          <div>
-            <h3
-              class="font-bold text-[11px] leading-[14.52px] text-white cursor-pointer"
-            >
-              <span>{{ i18n.locale.value }}</span>
-              <!-- {{ i18n.localeProperties.value.name }} -->
-            </h3>
-            <div
-              v-if="languageShow"
-              class="absolute w-[240px] rounded-[16px] bg-white flex flex-col drop-shadow-md py-[10px] gap-[4px] mt-[10px] ml-[-150px] z-10"
-            >
-              <div
-                v-for="(locale, ind) in i18n.availableLocales"
-                :key="ind"
-                class="flex px-[21px] py-[10px] gap-[34px] cursor-pointer"
-                @click="setLang(locale)"
+            <img src="/images/icons/icon.svg" alt="" />
+            <div>
+              <h3
+                class="font-bold text-[11px] leading-[14.52px] text-white cursor-pointer"
               >
-                <h3
-                  class="font-medium text-[13px] leading-[17.6px]"
-                  style="color: rgba(189, 189, 189, 1)"
+                <span>{{ i18n.locale.value }}</span>
+                <!-- {{ i18n.localeProperties.value.name }} -->
+              </h3>
+              <div
+                v-if="languageShow"
+                class="absolute w-[240px] rounded-[16px] bg-white flex flex-col drop-shadow-md py-[10px] gap-[4px] mt-[10px] ml-[-150px] z-10"
+              >
+                <div
+                  v-for="(locale, ind) in i18n.availableLocales"
+                  :key="ind"
+                  class="flex px-[21px] py-[10px] gap-[34px] cursor-pointer"
+                  @click="setLang(locale)"
                 >
-                  {{ locale }}
-                </h3>
-                <h3
-                  class="font-medium text-[13px] leading-[17.6px] text-black hover:text-blue-400"
-                >
-                  {{ locale }}
-                </h3>
-                <img
-                  v-if="locale === i18n.locale.value"
-                  class="ml-[30px]"
-                  src="/images/icons/success.svg"
-                  alt="checked"
-                />
+                  <h3
+                    class="font-medium text-[13px] leading-[17.6px]"
+                    style="color: rgba(189, 189, 189, 1)"
+                  >
+                    {{ locale }}
+                  </h3>
+                  <h3
+                    class="font-medium text-[13px] leading-[17.6px] text-black hover:text-blue-400"
+                  >
+                    {{ locale }}
+                  </h3>
+                  <img
+                    v-if="locale === i18n.locale.value"
+                    class="ml-[30px]"
+                    src="/images/icons/success.svg"
+                    alt="checked"
+                  />
+                </div>
               </div>
             </div>
-          </div>
           </div>
           <div>
             <h3
@@ -83,11 +83,7 @@
                 >
                   yevro
                 </h3>
-                <img
-                  class="ml-[10px]"
-                  src="/images/icons/success.svg"
-                  alt=""
-                />
+                <img class="ml-[10px]" src="/images/icons/success.svg" alt="" />
               </div>
             </div>
           </div>
@@ -132,8 +128,7 @@
                 @click="openMenu(1)"
                 class="font-semibold text-[15px] leading-[19.8px] text-black hover:text-gray-400 px-[24px] h-[50px] w-[100%] pt-[14px] rounded-[8px] uppercase"
                 >{{ $t("HEADER.COOPERATION") }}
-                </RouterLink
-              ]\>
+              </RouterLink>
             </div>
           </div>
           <div>
@@ -150,11 +145,11 @@
             to="/"
             class="text-[28px] leading-[33.91px] text-center"
             style="
-              font-family: 'Cormorant SC', 'sans-serif';
+              font-family: &quot;Cormorant SC&quot;, &quot;sans-serif&quot;;
               font-size: 28px;
               line-height: 33.91px;
             "
-            >
+          >
             OZODA SHOWROOM
           </RouterLink>
           <h4 class="text-center" style="color: rgba(173, 173, 173, 1)">
@@ -190,23 +185,23 @@
   </header>
 </template>
 <script setup lang="ts">
-import { ref, computed, onMounted } from 'vue';
-import { useRouter } from 'vue-router';
-import { useI18n } from 'vue-i18n';
+import { ref } from "vue";
+import { useRouter } from "vue-router";
+import { useI18n } from "vue-i18n";
 
-import { useAuthStore } from "@/stores/auth"
+import { useAuthStore } from "@/stores/auth";
 
 import ModalCategory from "@/components/menu/categories.vue";
-import ModalBasket from "@/components/modals/basket.vue"
-import ModalLogin from "@/components/modals/login.vue"
-import ModalSms from "@/components/modals/sms.vue"
+import ModalBasket from "@/components/modals/basket.vue";
+import ModalLogin from "@/components/modals/login.vue";
+import ModalSms from "@/components/modals/sms.vue";
 
-const i18n = useI18n()
-const router = useRouter()
-const authStore = useAuthStore()
+const i18n = useI18n();
+const router = useRouter();
+const authStore = useAuthStore();
 
-const isLoginModal = ref(false)
-const isSmsModal = ref(false)
+const isLoginModal = ref(false);
+const isSmsModal = ref(false);
 const show = ref(false);
 const currencyShow = ref(false);
 const categoryShow = ref(false);
@@ -222,16 +217,16 @@ const setLang = (lang: string) => {
 
 function toProfile() {
   if (authStore.isAuthenticated) {
-    router.push('/user/info')
+    router.push("/user/info");
   } else {
     isLoginModal.value = true;
   }
 }
 
 function loginModalClosed(e: string) {
-  console.log("isLoginModal")
-  if (e === "success") isSmsModal.value = true
-  isLoginModal.value = false
+  console.log("isLoginModal");
+  if (e === "success") isSmsModal.value = true;
+  isLoginModal.value = false;
 }
 
 function showRightModal() {
@@ -287,7 +282,7 @@ function openCurrency(val: number) {
     currencyShow.value = false;
   }
 }
-function openCategory(val: number) {
+function openCategory(val?: number) {
   categoryShow.value = !categoryShow.value;
   if (
     show.value == true ||

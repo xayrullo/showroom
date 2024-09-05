@@ -80,7 +80,8 @@
         >
           <swiper-slide
             class="flex flex-col max-w-[400px] w-full"
-            v-for="cards in 4"
+            v-for="card in 4"
+            :key="card"
           >
             <RouterLink
               :to="{
@@ -145,38 +146,24 @@ import { $api } from "@/api";
 import Banner from "@/components/products/banner.vue";
 import InfoPageProduct from "@/components/cards/infoPageProduct.vue";
 import ModalFilter from "@/components/modals/filter.vue";
-import { ICategory } from "@/types/category";
 
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { EffectCards } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-cards";
+import type { ICategory } from "@/types";
 
 const modules = [EffectCards];
 
 const route = useRoute();
 
-const category = ref<ICategory>({
-  _id: "432432ew",
-  title: "Lorem Ipsum",
-  image: "/images/categories/image1.png",
-  banner: "/images/categories/banner1.webp",
-  quantity: 100,
-} as ICategory);
-
-const sizeS = ref(false);
-const sizeM = ref(false);
-const sizeL = ref(false);
-const sizeXL = ref(false);
-const sizeXXL = ref(false);
+const category = ref<ICategory>({} as ICategory);
 
 //   const S = ref<HTMLElement | null>(null);
 //   const M = ref<HTMLElement | null>(null);
 //   const L = ref<HTMLElement | null>(null);
 //   const XL = ref<HTMLElement | null>(null);
 //   const XXL = ref<HTMLElement | null>(null);
-
-const show = ref(false);
 
 // const isModal = ref(false);
 const isModal = ref(false);
@@ -196,44 +183,6 @@ function getCategory() {
 
 function showRightModal() {
   isModal.value = true;
-}
-
-function changeSize(val: number) {
-  if (val == 1) {
-    sizeS.value = true;
-    sizeM.value = false;
-    sizeL.value = false;
-    sizeXL.value = false;
-    sizeXXL.value = false;
-  }
-  if (val == 2) {
-    sizeS.value = false;
-    sizeM.value = true;
-    sizeL.value = false;
-    sizeXL.value = false;
-    sizeXXL.value = false;
-  }
-  if (val == 3) {
-    sizeS.value = false;
-    sizeM.value = false;
-    sizeL.value = true;
-    sizeXL.value = false;
-    sizeXXL.value = false;
-  }
-  if (val == 4) {
-    sizeS.value = false;
-    sizeM.value = false;
-    sizeL.value = false;
-    sizeXL.value = true;
-    sizeXXL.value = false;
-  }
-  if (val == 5) {
-    sizeS.value = false;
-    sizeM.value = false;
-    sizeL.value = false;
-    sizeXL.value = false;
-    sizeXXL.value = true;
-  }
 }
 </script>
 

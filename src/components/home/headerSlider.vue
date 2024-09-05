@@ -17,10 +17,10 @@
         />
         <div class="px-[24px] py-[32px] bg-black">
           <h1 class="font-bold text-[72px] leading-[86px] text-white font-sans">
-            {{ banner.title[$i18n.locale] }}
+            {{ banner.title.en }}
           </h1>
           <h5 class="font-bold text-[15px] leading-[22px] text-white w-[700px]">
-            {{ banner.description[$i18n.locale] }}
+            {{ banner.description.en }}
           </h5>
         </div>
       </swiper-slide>
@@ -60,7 +60,7 @@ import { IMAGE_URL } from "@/utils/constants";
 
 import type { IPageContent } from "@/types";
 
-const props = defineProps<{
+defineProps<{
   banners: IPageContent[];
 }>();
 

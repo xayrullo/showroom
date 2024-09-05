@@ -2,10 +2,7 @@
   <div>
     <HeaderSlider v-if="home?.page_content" :banners="home.page_content" />
     <Categories :data="home.categories" />
-    <Collections
-      :collections="home.collections"
-      :collaction_name="home.collection_name"
-    />
+    <Collections :collections="home.collections" />
     <GetTheLook :looks="home.get_the_look" />
     <div>
       <video class="px-[72px]" src="/images/video.svg"></video>
@@ -56,7 +53,6 @@ import Describe from "@/components/home/describe.vue";
 import Location from "@/components/home/location.vue";
 
 import type { IHome } from "@/types";
-import { banners } from "@/data/home";
 
 const home = ref<IHome>({} as IHome);
 

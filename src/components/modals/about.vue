@@ -15,7 +15,7 @@
       :modules="modules"
       class="max-h-[390px] h-full"
     >
-      <swiper-slide v-for="slider in 5" class="max-w-[260px]">
+      <swiper-slide v-for="slider in 5" class="max-w-[260px]" :key="slider">
         <img src="/images/corouselImg.svg" />
       </swiper-slide>
     </swiper>

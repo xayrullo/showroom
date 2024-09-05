@@ -48,43 +48,6 @@ import { ref } from "vue";
 import Form from "@/components/order/form.vue";
 import Basket from "@/components/order/basket.vue";
 import Modal from "@/components/ui/modal.vue";
-import SelectCity from "@/components/select/city.vue";
-import SelectCountry from "@/components/select/country.vue";
 
-const form = {
-  username: "",
-  surname: "",
-  phoneNumber: 0,
-  userEmail: "",
-  country: "",
-  region: "",
-  city: "",
-  postCode: "",
-  street: "",
-};
-
-const isModal = ref(false);
 const isDeleteModal = ref(false);
-
-const countrySelected = ref("");
-const regionSelected = ref("");
-
-function showSuccesModal() {
-  isModal.value = true;
-}
-function showDeleteModal() {
-  isDeleteModal.value = true;
-}
-
-const counter = ref<number>(0);
-
-const increment = () => {
-  counter.value += 1;
-};
-
-const decrement = () => {
-  if (counter.value > 0) {
-    counter.value -= 1;
-  }
-};
 </script>

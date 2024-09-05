@@ -1,5 +1,5 @@
 <template>
-  <div class="w-max-[278px] relative group" v-for="size in 4">
+  <div class="w-max-[278px] relative group" v-for="size in 4" :key="size">
     <RouterLink to="products/134313" class="w-[278px] h-[100px] bg-black">
       <div class="w-[100%] h-[400px] relative z-0">
         <swiper
@@ -7,7 +7,7 @@
           :modules="modules"
           class="w-[100%] z-0 h-[100%]"
         >
-          <swiper-slide v-for="slide in 8">
+          <swiper-slide v-for="slide in 8" :key="slide">
             <img class="w-[100%]" src="/images/categoryDressImg.svg" alt="" />
           </swiper-slide>
         </swiper>
@@ -95,6 +95,7 @@
       <div class="flex gap-[10px] mt-[8px]">
         <div
           v-for="elem in 2"
+          :key="elem"
           class="w-[18px] h-[18px] rounded-[50%] bg-gray-500 cursor-pointer"
         ></div>
       </div>

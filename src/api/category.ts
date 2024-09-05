@@ -1,10 +1,10 @@
-import type { ICategory } from "@/types/category";
 import { categories } from "@/data/category";
+import { ICategory } from "@/types";
 
 export default class CategoryApi {
-  getAll(query?: any): Promise<ICategory[]> {
-    return new Promise((resolve, reject) => {
-      resolve(categories);
+  getAll(): Promise<ICategory[]> {
+    return new Promise((resolve) => {
+      resolve([]);
       return;
     });
   }
@@ -12,7 +12,7 @@ export default class CategoryApi {
   getById(id: string): Promise<ICategory> {
     return new Promise((resolve, reject) => {
       const res = categories.find((el) => el._id === id);
-      if (res) resolve(res);
+      if (res) resolve({} as ICategory);
       else reject();
       return;
     });

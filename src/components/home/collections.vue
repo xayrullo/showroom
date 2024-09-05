@@ -5,10 +5,7 @@
     <div class="mt-[100px]">
       <h1
         class="uppercase font-bold text-[64px] leading-[77.5px] max-w-[399px] font-sans"
-      >
-        <!-- {{ $t("CATEGORIES.COLLECTION") }} -->
-        <!-- {{ collection_name[$i18n.locale] }} -->
-      </h1>
+      ></h1>
       <RouterLink to="/products">
         <button
           id="collection"
@@ -47,7 +44,7 @@
             />
             <div class="flex justify-between mt-[14px] w-[100%]">
               <h4 class="font-bold text-[14px] leading-[18.48px] text-black">
-                {{ collection.name[$i18n.locale] }}
+                {{ collection.name.en }}
               </h4>
               <h4 class="font-bold text-[14px] leading-[18.48px] text-red-600">
                 <span>120</span> <span>USD</span>
@@ -64,12 +61,11 @@ import { Swiper, SwiperSlide } from "swiper/vue";
 import { EffectCards } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-cards";
-import { ICollection } from "@/types";
+import type { ICollection } from "@/types";
 import { IMAGE_URL } from "@/utils/constants";
 
-const props = defineProps<{
+defineProps<{
   collections: ICollection[];
-  collection_name: ICollection[];
 }>();
 const modules = [EffectCards];
 </script>

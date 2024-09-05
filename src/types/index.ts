@@ -1,4 +1,3 @@
-import { ICollection } from "./index";
 import type { LanguageCode } from "./../utils/constants";
 
 export interface ICategory {

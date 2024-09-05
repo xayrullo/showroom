@@ -18,7 +18,11 @@
         />
       </div>
       <div class="space-y-4">
-        <div v-for="product in 9" class="flex gap-[24px] mt-[19px]">
+        <div
+          v-for="product in 9"
+          :key="product"
+          class="flex gap-[24px] mt-[19px]"
+        >
           <img class="w-[103px] z-0" src="/images/infoPage1.svg" alt="" />
           <div class="flex flex-col gap-[12px]">
             <h4 class="font-bold text-[16px] leading-[20px] uppercase">

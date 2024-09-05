@@ -61,7 +61,7 @@
                 <h4
                   class="font-bold text-[24px] leading-[29.06px] text-center text-white mt-[-60px] font-sans absolute ml-[140px] capitalize"
                 >
-                  {{ slide.name[$i18n.locale] }}
+                  {{ slide.name.en }}
                 </h4>
               </div>
             </RouterLink>
@@ -76,10 +76,9 @@ import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css/free-mode";
 import { FreeMode, Scrollbar } from "swiper/modules";
 import { IGetTheLook } from "@/types";
-import { SlowBuffer } from "buffer";
 import { IMAGE_URL } from "@/utils/constants";
 
-const props = defineProps<{
+defineProps<{
   looks: IGetTheLook[];
 }>();
 

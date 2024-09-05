@@ -21,7 +21,7 @@
         <h3
           class="uppercase font-bold text-[24px] leading-[29.06px] text-white mt-[-50px] ml-[24px] group-hover:opacity-100 transition-opacity duration-300 opacity-0 font-sans"
         >
-          {{ category.name[$i18n.locale] }}
+          {{ category.name.en }}
         </h3>
       </div>
     </RouterLink>
@@ -31,7 +31,7 @@
 import { ICategory } from "@/types/index.ts";
 import { IMAGE_URL } from "@/utils/constants";
 
-const props = defineProps<{
+defineProps<{
   data: ICategory[];
 }>();
 </script>

@@ -80,4 +80,24 @@
     </div>
   </div>
 </template>
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { ref } from "vue";
+
+const isDeleteModal = ref(false);
+
+function showDeleteModal() {
+  isDeleteModal.value = true;
+}
+
+const counter = ref<number>(0);
+
+const increment = () => {
+  counter.value += 1;
+};
+
+const decrement = () => {
+  if (counter.value > 0) {
+    counter.value -= 1;
+  }
+};
+</script>

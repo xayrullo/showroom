@@ -9,32 +9,37 @@
       <div
         class="w-[100%] max-w-[200px] bg-gray-100 p-[24px] flex flex-col gap-[8px]"
       >
-        <RouterLink
+        <div
           class="font-medium text-[16px] leading-[24px] uppercase hover:text-black cursor-pointer"
           style="color: rgba(111, 111, 111, 1)"
-          >{{ t("HEADER.NEW") }}</RouterLink
         >
-        <RouterLink
+          {{ t("HEADER.NEW") }}
+        </div>
+        <div
           class="font-medium text-[16px] leading-[24px] uppercase hover:text-black cursor-pointer"
           style="color: rgba(111, 111, 111, 1)"
-          >{{ t("HEADER.CLOTHES") }}</RouterLink
         >
-        <RouterLink
+          {{ t("HEADER.CLOTHES") }}
+        </div>
+        <div
           class="font-medium text-[16px] leading-[24px] uppercase hover:text-black cursor-pointer"
           style="color: rgba(111, 111, 111, 1)"
-          >{{ t("HEADER.SHOES") }}</RouterLink
         >
-        <RouterLink
+          {{ t("HEADER.SHOES") }}
+        </div>
+        <div
           class="font-medium text-[16px] leading-[24px] uppercase hover:text-black cursor-pointer"
           style="color: rgba(111, 111, 111, 1)"
-          >{{ t("HEADER.ACCESORIES") }}</RouterLink
         >
+          {{ t("HEADER.ACCESORIES") }}
+        </div>
         <div>
-          <RouterLink
+          <div
             class="font-medium text-[16px] leading-[24px] uppercas cursor-pointer hover:text-black"
             style="color: rgba(111, 111, 111, 1)"
-            >{{ t("FOOTER.GALLERY") }}</RouterLink
           >
+            {{ t("FOOTER.GALLERY") }}
+          </div>
           <h3
             class="font-medium text-[10px] leading-[12px] uppercase mt-[2px]"
             style="color: rgba(189, 189, 189, 1)"

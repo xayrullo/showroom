@@ -2,8 +2,7 @@ import { ref } from "vue";
 import { defineStore } from "pinia";
 import $axios from "@/plugins/axios/index";
 import JwtService from "@/plugins/axios/jwtService";
-import type IUser from "@/types/user";
-import { $api } from "@/api";
+import type { IUser } from "@/types/user";
 
 export interface IAuth {
   user: IUser;
@@ -24,10 +23,8 @@ export const useAuthStore = defineStore(AUTH_STORE, () => {
   }
 
   async function setAuth(authUser: IAuth) {
-    console.log("SetAuth");
     isAuthenticated.value = true;
     JwtService.saveToken(authUser.jwt);
-    user.value = await $api.user.getById(authUser.user.id, { populate: "*" });
     errors.value = {};
     setToTheStore();
   }
@@ -107,7 +104,7 @@ export const useAuthStore = defineStore(AUTH_STORE, () => {
       JSON.stringify({
         user: user.value,
         isAuthenticated: isAuthenticated.value,
-      })
+      }),
     );
   }
 

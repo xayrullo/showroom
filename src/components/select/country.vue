@@ -22,7 +22,7 @@ const props = withDefaults(
     placeholder: "Select Country",
     disablePlaceholder: false,
     removePlaceholder: false,
-  }
+  },
 );
 
 // Reactive data
@@ -64,7 +64,7 @@ const firstCountry = computed(() => {
   if (props.countryName) {
     if (props.topCountry && props.topCountry.length === 2) {
       const regionObj = regions.find(
-        (region) => region.countryShortCode === props.topCountry
+        (region) => region.countryShortCode === props.topCountry,
       );
       return regionObj ? regionObj.countryName : "";
     } else {
@@ -72,10 +72,6 @@ const firstCountry = computed(() => {
     }
   }
   return props.topCountry || "";
-});
-
-const value = computed(() => {
-  return props.country || "";
 });
 
 const valueType = computed(() => {

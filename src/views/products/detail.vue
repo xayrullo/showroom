@@ -4,6 +4,7 @@
       <div class="w-[67%] grid grid-cols-2 gap-[10px]">
         <img
           v-for="image in 4"
+          :key="image"
           class="w-[100%] h-max-[570px]"
           src="/images/infoPage1.svg"
           alt=""
@@ -24,6 +25,7 @@
         <div class="flex gap-[10px] mt-[8px]">
           <div
             v-for="elem in 2"
+            :key="elem"
             class="w-[18px] h-[18px] rounded-[50%] bg-green-500"
           ></div>
         </div>

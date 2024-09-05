@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import regions from "@/data/countryRegiondata.ts";
-import { ref, watch, onMounted, computed } from "vue";
+import regions from "../../data/countryRegionData";
+import { ref, watch, onMounted, computed, type Ref } from "vue";
 
 const props = defineProps({
   country: String,
@@ -83,7 +83,7 @@ const autocompleteAttr = computed(() => {
 // Watchers and lifecycle hooks
 watch(
   () => props.country,
-  (newVal, oldVal) => {
+  (oldVal) => {
     if (oldVal !== "") {
       onChange("");
     }
@@ -92,7 +92,7 @@ watch(
     } else {
       shownRegions.value = [];
     }
-  }
+  },
 );
 
 onMounted(() => {
