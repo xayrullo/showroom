@@ -1,0 +1,126 @@
+<template>
+  <div>
+    <div class="w-[100%] h-max-[1132px] h-[100%] bg-black p-[72px]">
+      <h3
+        class="text-white text-center uppercase font-bold text-[36px] leading-[43.6px] font-sans max-w-[700px] mx-auto"
+      >
+        {{ $t("COOPERATION.ADVANTAGES") }}
+      </h3>
+      <div class="text-center mt-[72px]">
+        <img
+          style="margin: 0 auto; z-index: 0"
+          src="/images/aboutImg1.svg"
+          alt="Image1"
+        />
+        <div class="flex gap-[90px] justify-center mt-[-60px]">
+          <img style="z-index: 1" src="/images/aboutImg2.svg" alt="Image2" />
+          <img
+            style="z-index: 1; margin-top: -100px"
+            src="/images/aboutImg3.svg"
+            alt="Image3"
+          />
+        </div>
+      </div>
+      <h4
+        class="font-medium text-[18px] leading-[32px] text-white mt-[32px] max-w-[605px] mx-auto"
+      >
+        {{ $t("COOPERATION.ADVANTAGES_INFO") }}
+      </h4>
+    </div>
+    <div class="py-[72px]">
+      <h3
+        class="font-medium text-[24px] leading-[24px] text-zinc-500 text-center px-[100px] max-w-[800px] mx-auto"
+      >
+        {{ $t("COOPERATION.ORDERS_FROM") }}
+      </h3>
+      <div>
+        <ModalsAbout />
+      </div>
+
+      <h3
+        class="font-medium text-[24px] leading-[24px] text-zinc-500 text-center mt-[32px] max-w-[740px] mx-auto"
+      >
+        {{ $t("COOPERATION.ORDERS_QUALITY") }}
+      </h3>
+    </div>
+    <div class="flex">
+      <img src="/images/aboutImg4.svg" alt="Image4" />
+      <div class="w-[100%]">
+        <h3
+          class="uppercase text-center font-bold pt-[54px] text-[32px] leading-[38.75px] font-sans"
+        >
+          {{ $t("COOPERATION.WORK_TOGETHER") }}
+        </h3>
+        <h5
+          class="font-medium text-[20px] leading-[18px] text-center mt-[16px]"
+          style="color: rgba(153, 153, 153, 1)"
+        >
+          {{ $t("COOPERATION.WORK_TOGETHER_INFO") }}
+        </h5>
+        <div class="flex items-center justify-center gap-[24px] mt-[56px]">
+          <div class="flex flex-col w-[240px] gap-[12px]">
+            <input
+              type="text"
+              placeholder="Name"
+              class="w-max-[240px] h-[42px] rounded-[6px] border-[1px] border-gray-500 px-[12px]"
+            />
+            <input
+              type="number"
+              placeholder="+998"
+              class="w-max-[240px] h-[42px] rounded-[6px] border-[1px] border-gray-500 px-[12px]"
+            />
+            <input
+              type="email"
+              placeholder="name@example.com"
+              class="w-max-[240px] h-[42px] rounded-[6px] border-[1px] border-gray-500 px-[12px]"
+            />
+            <button
+              class="w-max-[240px] h-[42px] rounded-[6px] bg-black text-white"
+            >
+              {{ $t("COMMANDS.SEND") }}
+            </button>
+            <h4
+              class="font-bold text-[12px] leading-[15.84px] text-center text-gray-500"
+            >
+              {{ $t("COOPERATION.WORK_TOGETHER_SUBMIT") }}
+            </h4>
+          </div>
+          <textarea
+            class="w-[241px] h-[264px] p-[12px] border-[2px] rounded-[10px] resize-none"
+            name=""
+            id=""
+            placeholder="Describe your idea..."
+            cols="30"
+            rows="10"
+          >
+          </textarea>
+        </div>
+      </div>
+      <img src="/images/aboutImg5.svg" alt="Image5" />
+    </div>
+    <div class="px-[72px] flex flex-col justify-center items-center">
+      <div class="w-full h-[1px] bg-neutral-300 mt-6"></div>
+      <h1
+        class="uppercase text-center font-bold mt-[48px] text-[32px] leading-[38.75px] font-sans"
+      >
+        {{ $t("COOPERATION.NEWSLETTER") }}
+      </h1>
+      <h5
+        class="font-medium text-[14px] leading-[18px] text-center mt-[16px]"
+        style="color: rgba(153, 153, 153, 1)"
+      >
+        {{ $t("COOPERATION.NEWSLETTER_ADD") }}
+      </h5>
+      <RouterLink to="/subscribe">
+        <button
+          class="w-[110px] h-[38px] rounded-[19px] text-center text-white bg-black mt-[36px]"
+        >
+          {{ $t("COMMANDS.SUBSCRIBE") }}
+        </button>
+      </RouterLink>
+    </div>
+  </div>
+</template>
+<script setup lang="ts">
+import ModalsAbout from "@/components/modals/about.vue";
+</script>
